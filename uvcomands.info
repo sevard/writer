@@ -1,0 +1,30 @@
+From pyproject.toml	
+    uv pip compile pyproject.toml -o requirements.txt
+
+From requirements.in	
+    uv pip compile requirements.in -o requirements.txt
+
+From setup.py	
+    uv pip compile setup.py -o requirements.txt
+
+From multiple files	
+    uv pip compile pyproject.toml requirements-dev.in -o requirements-dev.txt
+
+Additional Options
+    To include optional dependencies, use:
+        For a specific extra: 
+            uv pip compile pyproject.toml --extra foo
+        For all extras: 
+            uv pip compile pyproject.toml --all-extras
+
+    To upgrade dependencies while compiling, use:
+        For a specific package: 
+            uv pip compile - -o requirements.txt --upgrade-package ruff
+        To upgrade all dependencies: 
+            uv pip compile - -o requirements.txt --upgrade
+
+Syncing the Environment
+After creating the requirements.txt, you can sync your environment with:
+    uv pip sync requirements.txt
+
+This command ensures that your environment matches the dependencies listed in the requirements.txt file.
