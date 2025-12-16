@@ -27,6 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-key-change-in-production')
 # SECURITY WARNING: don't run with debug turned on in production!
 # Read from environment variable; default to False for safety
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+print(DEBUG)
 
 # Allowed hosts: read from environment, comma-separated
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
 ]
 
 MIDDLEWARE = [
